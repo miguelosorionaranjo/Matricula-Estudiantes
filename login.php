@@ -1,3 +1,4 @@
+
 <?php require_once 'db_con.php'; 
 session_start();
 if(isset($_SESSION['user_login'])){
@@ -11,11 +12,11 @@ if(isset($_SESSION['user_login'])){
 		$input_arr = array();
 
 		if (empty($username)) {
-			$input_arr['input_user_error']= "Username Is Required!";
+			$input_arr['input_user_error']= "Debe Ingresar un Nombre de Usuario";
 		}
 
 		if (empty($password)) {
-			$input_arr['input_pass_error']= "Password Is Required!";
+			$input_arr['input_pass_error']= "Debe Ingresar una Contraseña";
 		}
 
 		if(count($input_arr)==0){
@@ -44,20 +45,59 @@ if(isset($_SESSION['user_login'])){
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Acceso Administrativo</title>
-  </head>
-  <body>
+
+	
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/overhang.min.css" />
+    <title>Inicio de Sesión</title>
+  
+
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#">Hidden brand</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="login.pgp">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="register.php">Registro de Usuarios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="container"><br>
-          <h1 class="text-center">Acceso Administrativo</h1><hr><br>
+          <h1 class="text-center">Inicio de Sesión</h1><hr><br>
           <div class="d-flex justify-content-center">
           	<?php if(isset($usernameerr)){ ?> <div role="alert" aria-live="assertive" aria-atomic="true" align="center" class="toast alert alert-danger fade hide" data-delay="2000"><?php echo $usernameerr; ?></div><?php };?>
           		<?php if(isset($worngpass)){ ?> <div role="alert" aria-live="assertive" aria-atomic="true" align="center" class="toast alert alert-danger fade hide" data-delay="2000"><?php echo $worngpass; ?></div><?php };?>
@@ -79,7 +119,7 @@ if(isset($_SESSION['user_login'])){
 				  <div class="text-center">
 				      <button type="submit" name="login" class="btn btn-warning">Ingresar</button>
 				    </div>
-				    <p>Si aún no tienes una cuenta de usuario, puedes <a href="register.php">Registrarte acá</a></p>
+				   
 				  </div>
 				</form>
             </div>

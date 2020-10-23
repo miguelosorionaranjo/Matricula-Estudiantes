@@ -29,7 +29,7 @@
   </thead>
   <tbody>
     <?php 
-      $query=mysqli_query($db_con,'SELECT * FROM `users`');
+      $query=mysqli_query($db_con,'SELECT * FROM `users` ORDER BY `name` ASC;');
       $i=1;
       while ($result = mysqli_fetch_array($query)) { ?>
       <tr>
@@ -52,7 +52,7 @@
 <script type="text/javascript">
   function confirmationDelete(anchor)
 {
-   var conf = confirm('Are you sure want to delete this record?');
+   var conf = confirm('¿Está seguro de que desea eliminar este registro?');
    if(conf)
       window.location=anchor.attr("href");
 }

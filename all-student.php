@@ -38,7 +38,7 @@
         }
         if (isset($_GET['edit'])) {
           if ($_GET['edit']=='success') {
-            echo "<p style='color: green; font-weight: bold; '>Estudiante eliminado exitósamente</p>";
+            echo "<p style='color: green; font-weight: bold; '>Estudiante editado de forma correcta</p>";
           }  
         }
         if (isset($_GET['edit'])) {
@@ -64,7 +64,7 @@
   </thead>
   <tbody>
     <?php 
-      $query=mysqli_query($db_con,'SELECT * FROM `student_info` ORDER BY `student_info`.`datetime` DESC;');
+      $query=mysqli_query($db_con,'SELECT * FROM `student_info` ORDER BY `name` ASC;');
       $i=1;
       while ($result = mysqli_fetch_array($query)) { ?>
       <tr>
